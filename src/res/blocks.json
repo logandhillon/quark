@@ -3,7 +3,7 @@
         "id": "whenFlagClicked",
         "name": "when flag clicked",
         "args": {},
-        "group": "Events"
+        "group": "events"
     },
     {
         "id": "setQubit",
@@ -11,7 +11,7 @@
         "args": {
             "0": "string"
         },
-        "group": "Qubits"
+        "group": "qubits"
     },
     {
         "id": "hadamard",
@@ -19,6 +19,6 @@
         "args": {
             "0": "qubit"
         },
-        "group": "Qubits"
+        "group": "gates"
     }
 ]

@@ -647,7 +647,7 @@ video {
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-bottom-width: 2px;
   padding-bottom: 0.5rem;
   font-size: 1.25rem;
@@ -656,6 +656,7 @@ h2 {
 }
 
 h3 {
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
