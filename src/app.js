@@ -153,7 +153,6 @@ function execute() {
         headers: {
             'Content-Type': 'application/json'
         },
-        mode: 'no-cors',
         body: JSON.stringify(script)
     })
         .then(response => response.json())
