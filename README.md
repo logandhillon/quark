@@ -12,15 +12,24 @@ Venturing into the world of quantum computing can be intimidating due to its com
 
 ## How we built it
 
-The backend of Quark is built using IBM's quPython library, a library that packages a rudimentary version of Qiskit, a quantum computing library. 
+The backend of Quark is built using IBM's quPython library, a library that packages a rudimentary version of Qiskit, a quantum computing library. The frontend resembles the very popular block coding website Scratch, by MIT.
 
 ## Challenges we ran into
 
+The overarching challenge while creating Quark was understanding the foundationals of quantum computing and how a quantum particle, or qubit, is programmed. Another challenge was creating a webapp that was attempting to meet the standard of quality of Scratch's webapp. Creating a frontend with a usable, human-oriented UI that can seamlessly provide all the required data to the backend was definitely a challenge.
+
 ## Accomplishments that we're proud of
+
+Quark is a major milestone for providing quantum computing to everyone, not just experts, and we are very proud of being able to achieve this. The journey to creating Quark also provided us with rudimentary knowledge of computing with qubits.
 
 ## What we learned
 
+During the production of Quark, our team mainly learned the true value of teamwork and collaboration. Many features of Quark may truly not have been possible without cooperation.
+
 ## What's next for Quark
 
+There are many plans for Quark in the near future, including:
+- A visual output window representing qubit states
+- Simulation of quantum entanglement
 
 ![Made for EurekaHACKS 2024](https://img.shields.io/badge/Made_for-EurekaHACKS_2024-blue)
