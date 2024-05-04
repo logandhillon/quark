@@ -1,8 +1,4 @@
-var editor = undefined;
-
 window.addEventListener("DOMContentLoaded", function () {
-    editor = document.getElementById("editor");
-
     loadBlocks();
 
     document.body.addEventListener('click', function(e) {
@@ -46,8 +42,8 @@ function loadBlocks() {
                 btnAdd.appendChild(iconAdd);
 
                 const block = document.createElement("div");
-                block.id = item['id']
-                block.className = "block block-" + item['group'];
+                block.id = item['id'];
+                block.className = `block block-${item['group']} ${item['id']}`;
                 const parts = item['name'].split("{}");
                 let i = 0;
                 parts.forEach(part => {
@@ -117,8 +113,36 @@ function removeBlock(id) {
 function execute() {
     document.getElementById("btn-play-spin").classList.toggle("hide", false);
     document.getElementById("btn-play-icon").classList.toggle("hide", true);
+
+    const script = {};
+    let i = 0;
+    Array.from(document.getElementById("editor").children).forEach(element => {
+        script[`${i}`] = packBlockToJson(element.id);
+        i++;
+    });
+
+    console.log(script);
+
+    document.getElementById("btn-play-spin").classList.toggle("hide", true);
+    document.getElementById("btn-play-icon").classList.toggle("hide", false);
 }
 
-function packBlockToJson() {
+function packBlockToJson(id) {
+    console.log("Attempting to pack " + id)
+    const block = document.getElementById(id).querySelector(".block");
+    const argElements = block.querySelectorAll("input");
+
+    const args = {};
     
+    let i = 0;
+    Array.from(argElements).forEach(element => {
+        args[`${i}`] = {
+            value: element.value
+        }
+    });
+
+    return {
+        id: block.id,
+        args: args
+    }
 }

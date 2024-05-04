@@ -15,7 +15,7 @@ h3 {
 }
 
 .block {
-    @apply bg-slate-200 w-fit p-2 border border-slate-300 text-sm;
+    @apply bg-slate-200 w-fit p-2 border border-slate-300 text-sm shadow-sm;
 }
 
 .block-wrapper {
