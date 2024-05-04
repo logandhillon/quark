@@ -1,13 +1,18 @@
-import json, io, sys
+from qupython import Qubit, quantum
+import json
+import subprocess
 from flask import Flask, request, jsonify
 from parse_json import json_to_py
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 
 @app.route('/process', methods=['POST'])
 def handle_request():
     print("Handling request")
-    
+
     script = json.loads(request.data.decode())
 
     try:
@@ -15,21 +20,18 @@ def handle_request():
         print("Generated code")
         print(code)
 
-        stdout_buffer = io.StringIO()
-        sys.stdout = stdout_buffer
+        with open("output.py", "w") as f:
+            f.write(code)
 
-        # Execute the script string
-        exec(code)
-
-        # Get the output from the string buffer
-        output = stdout_buffer.getvalue()
-
-        # Reset stdout to its original value
-        sys.stdout = sys.__stdout__
+        result = subprocess.run(
+            ['python3', 'output.py'], capture_output=True, text=True)
 
         print("Execution complete")
 
+        output = result.stdout
         print(output)
+
+        return jsonify({"output": output}), 200
     except Exception as e:
         print("Error!", e)
         return jsonify({"error": str(e)}), 500
