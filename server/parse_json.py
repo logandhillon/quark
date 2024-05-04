@@ -4,9 +4,9 @@ from functools import wraps
 
 pattern = re.compile(r'[^a-zA-Z0-9]')
 
-def json_to_py():
+def json_to_py(data):
 
-    data = json.load(open("test.json", "r"))
+    # data = json.load(open("test.json", "r"))
 
     # Define the mapping from JSON "id" to Python code
     blocks = {
@@ -83,5 +83,5 @@ def json_to_py():
     # Return the complete script as a single string
     return "\n".join(python_script)
 
-with open("runtime.py", "w") as py_file:
-    py_file.write(json_to_py())
+# with open("runtime.py", "w") as py_file:
+#     py_file.write(json_to_py())
