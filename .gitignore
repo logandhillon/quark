@@ -9,6 +9,7 @@
 # testing
 /coverage
 test.json
+runtime.py
 
 # next.js
 /.next/

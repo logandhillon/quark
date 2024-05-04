@@ -12,6 +12,8 @@ Venturing into the world of quantum computing can be intimidating due to its com
 
 ## How we built it
 
+The backend of Quark is built using IBM's quPython library, a library that packages a rudimentary version of Qiskit, a quantum computing library. 
+
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of

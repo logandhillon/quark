@@ -4,9 +4,9 @@ from functools import wraps
 
 pattern = re.compile(r'[^a-zA-Z0-9]')
 
-def json_to_py(data):
+def json_to_py():
 
-    # data = json.load(open("test.json", "r"))
+    data = json.load(open("test.json", "r"))
 
     # Define the mapping from JSON "id" to Python code
     blocks = {
@@ -39,17 +39,16 @@ def json_to_py(data):
 
     # Process each operation in the JSON
     indents = 1
-    outputs = []
+    outputs = ""
     for entry in data.values():
         block = entry["id"]
 
         # Add output to outputs list if is output
         if block == "output":
-            outputs.append("result_{}".format("q_" + pattern.sub('_', entry["args"]["0"]["value"])))
+            outputs += "result_{}, ".format("q_" + pattern.sub('_', entry["args"]["0"]["value"]))
 
         # Get code equivalent of block id
         operation = blocks.get(block)
-        print(operation)
         try:
             operation = operation.replace("{qubit_label}", "q_" + pattern.sub('_', entry["args"]["0"]["value"]))
         except KeyError:
@@ -79,10 +78,10 @@ def json_to_py(data):
         elif block == "endLoop":
             indents = 1
     
-    python_script.append("\treturn {}\nprint(runtime())".format(outputs))
+    python_script.append("\treturn [{}]\nprint(runtime())".format(outputs.strip(", ")))
 
     # Return the complete script as a single string
     return "\n".join(python_script)
 
-# with open("runtime.py", "w") as py_file:
-#     py_file.write(json_to_py())
+with open("runtime.py", "w") as py_file:
+    py_file.write(json_to_py())
