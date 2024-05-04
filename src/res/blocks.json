@@ -1,0 +1,24 @@
+[
+    {
+        "id": "whenFlagClicked",
+        "name": "when flag clicked",
+        "args": {},
+        "group": "Events"
+    },
+    {
+        "id": "setQubit",
+        "name": "set {} to new qubit",
+        "args": {
+            "0": "string"
+        },
+        "group": "Qubits"
+    },
+    {
+        "id": "hadamard",
+        "name": "apply hadamard gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "Qubits"
+    }
+]

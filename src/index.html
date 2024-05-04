@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quark</title>
     <link rel="stylesheet" href="output.css">
+    <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </head>
-<body>
-    Hello World
+<body class="h-screen flex flex-col">
+    <header class="flex bg-violet-500 p-4 items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img src="res/quark-logo.svg" class="aspect-square w-12">
+            <h1 class="text-white text-lg font-semibold">Quark</h1>
+        </div>
+        <a href="#" class="text-white space-x-2 flex items-center hover:border-b-2"><span>Exit Editor</span><i class="fa-solid fa-arrow-right"></i></a>
+    </header>
+
+    <main class="flex flex-grow">
+        <div class="bg-neutral-50 shadow-md border-r-2 p-5 w-64">
+            <h2>Blocks</h2>
+            <h3>Tab Name</h3>
+            <div class="block-wrapper">
+                <div class="block">hello world</div>
+                <button type="button" onclick="addBlock()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="p-5 flex-grow">
+            <h2 class="w-full">Editor</h2>
+            <div id="editor" class="flex flex-col"></div>
+        </div>
+    </main>
 </body>
 </html>
