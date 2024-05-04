@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    @apply text-neutral-950;
+}
+
 h2 {
     @apply text-xl font-semibold border-b-2 pb-2 mb-2;
 }
