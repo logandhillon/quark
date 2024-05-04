@@ -39,5 +39,9 @@ input {
 }
 
 .tooltip {
-    @apply bg-slate-100 border-slate-200 border absolute group-hover:opacity-100 opacity-0 transition-opacity text-sm -bottom-8 -left-4;
+    @apply bg-slate-100 border-slate-200 border absolute group-hover:opacity-100 opacity-0 transition-opacity text-sm top-0 left-0;
+}
+
+.hide {
+    display: none !important;
 }

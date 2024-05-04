@@ -32,9 +32,15 @@
         </div>
 
         <div class="p-5 flex-grow">
-            <h2 class="w-full">Editor</h2>
+            <h2 class="flex items-center w-full justify-between">
+                <span>Editor</span>
+                <button type="button" onclick="execute()" class="text-green-600 text-lg">
+                    <i id="btn-play-icon" class="fa-solid fa-play hover:scale-110 active:scale-90 transition-transform"></i>
+                    <i id="btn-play-spin" class="fa-solid fa-circle-notch fa-spin hide"></i>
+                </button>
+            </h2>
             <div id="editor" class="flex flex-col">
-                <div id="whenFlagClicked" class="block block-events">when flag clicked</div>
+                <div class="block block-events space-x-2"><span>when</span><i class="fa-solid fa-play text-green-600"></i><span>button pressed</span></div>
             </div>
         </div>
     </main>

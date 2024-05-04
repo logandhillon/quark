@@ -1,12 +1,5 @@
 [
     {
-        "id": "whenFlagClicked",
-        "name": "when flag clicked",
-        "args": {},
-        "group": "events",
-        "tooltip": "This event block is triggered at the start of a program. It activates when the user clicks the designated 'flag' icon, serving as the primary method to begin executing a sequence of commands or functions."
-    },    
-    {
         "id": "setQubit",
         "name": "set {} to new qubit",
         "args": {

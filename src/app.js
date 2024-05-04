@@ -89,3 +89,8 @@ function addBlock(id) {
 function removeBlock(id) {
     document.getElementById(id).remove();
 }
+
+function execute() {
+    document.getElementById("btn-play-spin").classList.toggle("hide", false);
+    document.getElementById("btn-play-icon").classList.toggle("hide", true);
+}
