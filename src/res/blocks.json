@@ -143,11 +143,11 @@
     },    
     {
         "id": "output",
-        "name": "display the result of {}",
+        "name": "show result of {}",
         "args": {
             "0": "qubit"
         },
-        "group": "events",
+        "group": "qubits",
         "tooltip": "This block displays finalizes all operations and desplays the end result"
     },
     {
