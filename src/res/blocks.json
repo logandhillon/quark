@@ -1,0 +1,169 @@
+[
+    {
+        "id": "setQubit",
+        "name": "set {} to new qubit",
+        "args": {
+            "0": "string"
+        },
+        "group": "qubits",
+        "tooltip": "This command initializes a new quantum bit (qubit) and assigns it to a variable specified by the user. This allows for the manipulation and measurement of the qubit in subsequent quantum operations."
+    },    
+    {
+        "id": "hadamard",
+        "name": "apply hadamard gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This command applies the Hadamard gate to a specified qubit. The Hadamard gate transforms the state of the qubit into a superposition, making it equally likely to be measured as either 0 or 1, thereby creating the basic quantum state required for many quantum algorithms."
+    },    
+    {
+        "id": "phase",
+        "name": "apply phase shift of angle {} to {}",
+        "args": {
+            "0": "theta",
+            "1": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies a phase shift of a specified angle to a qubit. The phase shift gate adjusts the phase of the quantum state of the qubit without changing its amplitude. This operation is crucial for controlling the interference of quantum states in algorithms such as quantum Fourier transform and other quantum computing applications."
+    },    
+    {
+        "id": "rotX",
+        "name": "apply RX gate with angle {} to {}",
+        "args": {
+            "0": "theta",
+            "1": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the RX (rotation about the X-axis) gate to a specified qubit at a given angle. The RX gate rotates the state of the qubit around the X-axis of the Bloch sphere by the specified angle. This rotation is fundamental for altering the probability amplitudes of the qubit's state, enabling precise control over its quantum state for computation."
+    },    
+    {
+        "id": "rotY",
+        "name": "apply RY gate with angle {} to {}",
+        "args": {
+            "0": "theta",
+            "1": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the RY (rotation about the Y-axis) gate to a specified qubit at a given angle. The RY gate rotates the qubit's state around the Y-axis of the Bloch sphere. This gate is essential for adjusting the state vector of the qubit, enabling transitions between basis states, and is commonly used in quantum operations that require coherent superpositions."
+    },    
+    {
+        "id": "rotZ",
+        "name": "apply RZ gate with angle {} to {}",
+        "args": {
+            "0": "theta",
+            "1": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the RZ (rotation about the Z-axis) gate to a specified qubit at a given angle. The RZ gate is used to change the phase of the qubit without altering its probability amplitudes. It rotates the qubit's state around the Z-axis of the Bloch sphere, which is pivotal for phase manipulation in quantum circuits and is often used in quantum algorithms to control qubit superpositions."
+    },
+    {
+        "id": "sGate",
+        "name": "apply S gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the S gate to a specified qubit. The S gate, also known as the phase gate, applies a π/2 phase shift to the qubit. It is a special case of the phase shift gate and is fundamental in creating phase differences between quantum states. The S gate is crucial for quantum algorithms involving entanglement and quantum Fourier transform operations."
+    },    
+    {
+        "id": "sAdjoint",
+        "name": "apply S-adjoint gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the S-adjoint gate (also known as the S-dagger or S† gate) to a specified qubit. The S-adjoint gate is the inverse of the S gate, applying a -π/2 phase shift to the qubit. It reverses the phase change introduced by the S gate and is important for the undoing of operations and the correction of phase errors in quantum algorithms."
+    },
+    {
+        "id": "tGate",
+        "name": "apply T gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the T gate to a specified qubit. The T gate, also known as the π/8 gate, introduces a π/4 phase shift to the qubit. It is a crucial tool in quantum computing for achieving finer phase control than the S gate, enabling more complex quantum algorithms, particularly in the implementation of universal quantum gates and error correction protocols."
+    },    
+    {
+        "id": "tAdjoint",
+        "name": "apply T-adjoint gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the T-adjoint gate (also known as the T-dagger or T† gate) to a specified qubit. The T-adjoint gate is the inverse of the T gate, applying a -π/4 phase shift to the qubit. It counteracts the phase shift imparted by the T gate and plays a vital role in the correction and refinement of quantum states in complex quantum circuits and algorithms."
+    },    
+    {
+        "id": "uGate",
+        "name": "apply U gate with angles {} {} {} to {}",
+        "args": {
+            "0": "theta",
+            "1": "phi",
+            "2": "lambda",
+            "3": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the U gate to a specified qubit, using three angles: theta, phi, and lambda. The U gate is a general-purpose single-qubit gate that provides a parametric way to perform any unitary operation on a qubit. It encompasses all possible single-qubit transformations and is fundamental in custom quantum gate design, allowing for the execution of highly specific manipulations needed in complex quantum algorithms."
+    },    
+    {
+        "id": "pauliX",
+        "name": "apply Pauli-X gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the Pauli-X gate to a specified qubit. The Pauli-X gate, also known as the quantum bit-flip gate or the NOT gate, flips the state of the qubit from |0⟩ to |1⟩ and vice versa. It is equivalent to a rotation around the X-axis of the Bloch sphere by π radians and is a fundamental gate in quantum computing for creating bit flips and in the implementation of quantum algorithms that require state inversions."
+    },    
+    {
+        "id": "pauliY",
+        "name": "apply Pauli-Y gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the Pauli-Y gate to a specified qubit. The Pauli-Y gate is equivalent to a rotation about the Y-axis of the Bloch sphere by π radians. It performs both a bit and phase flip of the qubit's state, changing |0⟩ to -i|1⟩ and |1⟩ to i|0⟩. This gate is essential in quantum operations that require manipulating both the amplitude and phase of quantum states."
+    },    
+    {
+        "id": "pauliZ",
+        "name": "apply Pauli-Z gate to {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "gates",
+        "tooltip": "This block applies the Pauli-Z gate to a specified qubit. The Pauli-Z gate, also known as the phase-flip gate, applies a π phase shift to the state |1⟩ while leaving the state |0⟩ unchanged. It is equivalent to a rotation around the Z-axis of the Bloch sphere by π radians. This gate is crucial for manipulating the phase of qubits in quantum circuits and is widely used in quantum error correction and other algorithms that require phase adjustments."
+    },    
+    {
+        "id": "collapse",
+        "name": "collapse {} into one value",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "qubits",
+        "tooltip": "This block collapses a quantum state represented as a string into a single value. The 'collapse' function simulates the measurement process in quantum computing, where a superposition of multiple states is reduced to one definite state. This operation is fundamental for transitioning from quantum to classical information, providing a specific outcome necessary for concluding quantum computations and analyses."
+    },    
+    {
+        "id": "output",
+        "name": "show result of {}",
+        "args": {
+            "0": "qubit"
+        },
+        "group": "qubits",
+        "tooltip": "This block displays finalizes all operations and desplays the end result"
+    },
+    {
+        "id": "startLoop",
+        "name": "repeat {} times",
+        "args": {
+            "0": "times"
+        },
+        "group": "control",
+        "tooltip": "This block will repeat everything inside of it the specified amount of times"
+    },
+    {
+        "id": "endLoop",
+        "name": "end repeat",
+        "args": {},
+        "group": "control",
+        "tooltip": "This block signifies the end of a repeat block"
+    }
+]

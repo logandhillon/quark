@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quark</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <link rel="shortcut icon" href="res/quark-logo.svg" type="image/x-icon">
+</head>
+<body class="h-screen flex flex-col">
+    <header class="flex bg-violet-500 p-4 items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img src="res/quark-logo.svg" class="aspect-square w-12">
+            <h1 class="text-white text-lg font-semibold">Quark</h1>
+        </div>
+        <a href="#" class="text-white space-x-2 flex items-center hover:border-b-2"><span>Exit Editor</span><i class="fa-solid fa-arrow-right"></i></a>
+    </header>
+
+    <main class="flex flex-grow">
+        <div class="bg-neutral-50 shadow-md border-r-2 p-5 w-64">
+            <h2>Toolbox</h2>
+
+            <div id="tab-qubits">
+                <h3>Qubits</h3>
+            </div>
+
+            <div id="tab-gates">
+                <h3>Gates</h3>
+            </div>
+
+            <div id="tab-control">
+                <h3>Control</h3>
+            </div>
+        </div>
+
+        <div class="p-5 flex-grow">
+            <h2 class="flex items-center w-full justify-between">
+                <span>Editor</span>
+                <div class="flex items-center space-x-2">
+                    <p class="text-sm font-normal text-gray-500" id="status"></p>
+                    <button type="button" onclick="execute()" class="text-green-600 text-lg">
+                        <i id="btn-play-icon" class="fa-solid fa-play hover:scale-110 active:scale-90 transition-transform"></i>
+                        <i id="btn-play-spin" class="fa-solid fa-circle-notch fa-spin hide"></i>
+                    </button>
+                </div>
+            </h2>
+            <div class="block block-events space-x-2 rounded-t-lg"><span>when</span><i class="fa-solid fa-play text-green-600"></i><span>button pressed</span></div>
+            <div id="editor" class="flex flex-col">
+                
+            </div>
+        </div>
+    </main>
+</body>
+</html>
