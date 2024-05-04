@@ -38,6 +38,10 @@ button, .icon {
     @apply bg-green-400 border-green-300;
 }
 
+.block-control {
+    @apply bg-orange-300 border-orange-200;
+}
+
 input {
     @apply rounded-full p-1 text-sm w-16 text-center mx-1;
 }

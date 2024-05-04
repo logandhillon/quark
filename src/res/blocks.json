@@ -149,5 +149,21 @@
         },
         "group": "events",
         "tooltip": "This block displays finalizes all operations and desplays the end result"
+    },
+    {
+        "id": "startLoop",
+        "name": "repeat {} times",
+        "args": {
+            "0": "times"
+        },
+        "group": "control",
+        "tooltip": "This block will repeat everything inside of it the specified amount of times"
+    },
+    {
+        "id": "endLoop",
+        "name": "end repeat",
+        "args": {},
+        "group": "control",
+        "tooltip": "This block signifies the end of a repeat block"
     }
 ]
