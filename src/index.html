@@ -34,10 +34,13 @@
         <div class="p-5 flex-grow">
             <h2 class="flex items-center w-full justify-between">
                 <span>Editor</span>
-                <button type="button" onclick="execute()" class="text-green-600 text-lg">
-                    <i id="btn-play-icon" class="fa-solid fa-play hover:scale-110 active:scale-90 transition-transform"></i>
-                    <i id="btn-play-spin" class="fa-solid fa-circle-notch fa-spin hide"></i>
-                </button>
+                <div class="flex items-center space-x-2">
+                    <p class="text-sm font-normal text-gray-500" id="status"></p>
+                    <button type="button" onclick="execute()" class="text-green-600 text-lg">
+                        <i id="btn-play-icon" class="fa-solid fa-play hover:scale-110 active:scale-90 transition-transform"></i>
+                        <i id="btn-play-spin" class="fa-solid fa-circle-notch fa-spin hide"></i>
+                    </button>
+                </div>
             </h2>
             <div class="block block-events space-x-2 rounded-t-lg"><span>when</span><i class="fa-solid fa-play text-green-600"></i><span>button pressed</span></div>
             <div id="editor" class="flex flex-col">

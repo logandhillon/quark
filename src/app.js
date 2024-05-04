@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     loadBlocks();
 
-    document.body.addEventListener('click', function(e) {
+    document.body.addEventListener('click', function (e) {
         if (!e.target.classList.contains('tooltip')) {
             Array.from(document.getElementsByClassName("active-tooltip")).forEach(element => {
                 element.classList.add("invisible");
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleTooltip(id) {
-    const e = document.getElementById("tooltip-"+id);
+    const e = document.getElementById("tooltip-" + id);
     e.classList.toggle("invisible");
 
     Array.from(document.getElementsByClassName("active-tooltip")).forEach(element => {
@@ -20,7 +20,7 @@ function toggleTooltip(id) {
         element.classList.remove("active-tooltip");
     });
 
-    setTimeout(function() {
+    setTimeout(function () {
         e.classList.add("active-tooltip");
     }, 50);
 }
@@ -66,7 +66,7 @@ function loadBlocks() {
                 const tooltip = document.createElement("div");
                 tooltip.innerText = item['tooltip'];
                 tooltip.className = "tooltip invisible";
-                tooltip.id = 'tooltip-'+item['id'];
+                tooltip.id = 'tooltip-' + item['id'];
 
                 wrapper.appendChild(block);
                 wrapper.appendChild(btnInfo);
@@ -133,6 +133,9 @@ function removeBlock(id) {
 function execute() {
     document.getElementById("btn-play-spin").classList.toggle("hide", false);
     document.getElementById("btn-play-icon").classList.toggle("hide", true);
+    const status = document.getElementById("status");
+
+    status.innerText = "Preparing script..."
 
     const script = {};
     let i = 0;
@@ -141,10 +144,36 @@ function execute() {
         i++;
     });
 
-    console.log(script);
+    status.innerText = "Executing...";
 
-    document.getElementById("btn-play-spin").classList.toggle("hide", true);
-    document.getElementById("btn-play-icon").classList.toggle("hide", false);
+    fetch("http://localhost:5000/process", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(script)
+    })
+        .then(response => response.json())
+        .then(data => {
+            status.innerText = "Done!"
+            setTimeout(function () {
+                status.innerText = "";
+            }, 1000)
+
+            document.getElementById("btn-play-spin").classList.toggle("hide", true);
+            document.getElementById("btn-play-icon").classList.toggle("hide", false);
+        })
+        .catch(e => {
+            console.error(e);
+            status.innerText = "Something went wrong."
+
+            setTimeout(function () {
+                status.innerText = "";
+            }, 1000)
+
+            document.getElementById("btn-play-spin").classList.toggle("hide", true);
+            document.getElementById("btn-play-icon").classList.toggle("hide", false);
+        });
 }
 
 function packBlockToJson(id) {
@@ -153,7 +182,7 @@ function packBlockToJson(id) {
     const argElements = block.querySelectorAll("input");
 
     const args = {};
-    
+
     let i = 0;
     Array.from(argElements).forEach(element => {
         args[`${i}`] = {
