@@ -1,5 +1,5 @@
 {
-    "0": {
+    "0 //IGNORE THIS, START THE NEXT ONE AT 0": {
         "id": "whenFlagClicked",
         "args": {}
     },
@@ -40,7 +40,7 @@
         }
     },
     "5": {
-        "id": "repeatLoop",
+        "id": "startLoop",
         "args": {
             "0": {
                 "value": 3,

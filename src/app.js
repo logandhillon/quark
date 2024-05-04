@@ -4,7 +4,30 @@ window.addEventListener("DOMContentLoaded", function () {
     editor = document.getElementById("editor");
 
     loadBlocks();
+
+    document.body.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('tooltip')) {
+            Array.from(document.getElementsByClassName("active-tooltip")).forEach(element => {
+                element.classList.add("invisible");
+                element.classList.remove("active-tooltip");
+            });
+        }
+    });
 });
+
+function toggleTooltip(id) {
+    const e = document.getElementById("tooltip-"+id);
+    e.classList.toggle("invisible");
+
+    Array.from(document.getElementsByClassName("active-tooltip")).forEach(element => {
+        element.classList.add("invisible");
+        element.classList.remove("active-tooltip");
+    });
+
+    setTimeout(function() {
+        e.classList.add("active-tooltip");
+    }, 50);
+}
 
 function loadBlocks() {
     fetch("res/blocks.json")
@@ -37,20 +60,21 @@ function loadBlocks() {
                     i++;
                 });
 
+                const btnInfo = document.createElement("button");
+                btnInfo.type = "button";
+                btnInfo.setAttribute("onclick", `toggleTooltip("${item['id']}")`);
+                const iconInfo = document.createElement("i");
+                iconInfo.className = "fa-solid fa-info";
+                btnInfo.appendChild(iconInfo);
+
                 const tooltip = document.createElement("div");
                 tooltip.innerText = item['tooltip'];
-                tooltip.className = "tooltip";
-
-                const iconInfo = document.createElement("i");
-                iconInfo.className = "fa-solid fa-info icon";
-
-                const info = document.createElement("div");
-                info.className = "icon group px-1";
-                info.appendChild(iconInfo);
-                info.appendChild(tooltip)
+                tooltip.className = "tooltip invisible";
+                tooltip.id = 'tooltip-'+item['id'];
 
                 wrapper.appendChild(block);
-                wrapper.appendChild(info)
+                wrapper.appendChild(btnInfo);
+                wrapper.appendChild(tooltip);
                 wrapper.appendChild(btnAdd);
 
                 document.getElementById("tab-" + item['group']).appendChild(wrapper);
@@ -93,4 +117,8 @@ function removeBlock(id) {
 function execute() {
     document.getElementById("btn-play-spin").classList.toggle("hide", false);
     document.getElementById("btn-play-icon").classList.toggle("hide", true);
+}
+
+function packBlockToJson() {
+
 }

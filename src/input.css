@@ -19,7 +19,7 @@ h3 {
 }
 
 button, .icon {
-    @apply text-sm text-slate-400;
+    @apply text-sm text-slate-400 relative;
 }
 
 .block-events {
@@ -39,9 +39,13 @@ input {
 }
 
 .tooltip {
-    @apply bg-slate-100 border-slate-200 border absolute group-hover:opacity-100 opacity-0 transition-opacity text-sm top-0 left-0;
+    @apply bg-slate-100 border-slate-200 border absolute transition-opacity text-sm top-8 left-44 -right-72 z-10;
 }
 
 .hide {
     display: none !important;
+}
+
+.invisible {
+    opacity: 0;
 }
