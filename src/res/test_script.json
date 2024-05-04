@@ -1,0 +1,81 @@
+{
+    "0": {
+        "id": "whenFlagClicked",
+        "args": {}
+    },
+    "1": {
+        "id": "setQubit",
+        "args": {
+            "0": {
+                "value": "my qubit",
+                "type": "string"
+            }
+        }
+    },
+    "2": {
+        "id": "hadamard",
+        "args": {
+            "0": {
+                "value": "my qubit",
+                "type": "var"
+            }
+        }
+    },
+    "3": {
+        "id": "collapse",
+        "args": {
+            "0": {
+                "value": "my qubit",
+                "type": "var"
+            }
+        }
+    },
+    "4": {
+        "id": "output",
+        "args": {
+            "0": {
+                "value": "my qubit",
+                "type": "var"
+            }
+        }
+    },
+    "5": {
+        "id": "repeatLoop",
+        "args": {
+            "0": {
+                "value": 3,
+                "type": "int"
+            }
+        }
+    },
+    "6": {
+        "id": "rotX",
+        "args": {
+            "0": {
+                "value": 60.0,
+                "type": "double"
+            }
+        }
+    },
+    "7": {
+        "id": "uGate",
+        "args": {
+            "0": {
+                "value": 30.0,
+                "type": "double"
+            },
+            "1": {
+                "value": 45.5,
+                "type": "double"
+            },
+            "2": {
+                "value": 60.0,
+                "type": "double"
+            }
+        }
+    },
+    "8": {
+        "id": "endLoop",
+        "args": {}
+    }
+}

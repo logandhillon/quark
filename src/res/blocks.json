@@ -2,12 +2,14 @@
     {
         "id": "whenFlagClicked",
         "name": "when flag clicked",
+        "tooltip": "Runs when the green flag is clicked",
         "args": {},
         "group": "events"
     },
     {
         "id": "setQubit",
         "name": "set {} to new qubit",
+        "tooltip": "Creates a new qubit and saves it as a value",
         "args": {
             "0": "string"
         },
@@ -16,6 +18,7 @@
     {
         "id": "hadamard",
         "name": "apply hadamard gate to {}",
+        "tooltip": "i have no clue // FIX THIS",
         "args": {
             "0": "qubit"
         },

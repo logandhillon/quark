@@ -11,13 +11,33 @@ h3 {
 }
 
 .block {
-    @apply bg-slate-200 w-fit p-2 border border-slate-300;
+    @apply bg-slate-200 w-fit p-2 border border-slate-300 text-sm;
 }
 
 .block-wrapper {
-    @apply flex items-center space-x-3;
+    @apply flex items-center space-x-3 relative;
 }
 
-button {
+button, .icon {
     @apply text-sm text-slate-400;
+}
+
+.block-events {
+    @apply bg-yellow-400 border-yellow-300;
+}
+
+.block-qubits {
+    @apply bg-purple-300 border-purple-200;
+}
+
+.block-gates {
+    @apply bg-green-400 border-green-300;
+}
+
+input {
+    @apply rounded-full p-1 text-sm w-16 text-center mx-1;
+}
+
+.tooltip {
+    @apply bg-slate-100 border-slate-200 border absolute group-hover:opacity-100 opacity-0 transition-opacity text-sm -bottom-8 -left-4;
 }

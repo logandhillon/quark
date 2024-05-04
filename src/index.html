@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="output.css">
     <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <link rel="shortcut icon" href="res/quark-logo.svg" type="image/x-icon">
 </head>
 <body class="h-screen flex flex-col">
     <header class="flex bg-violet-500 p-4 items-center justify-between">
@@ -20,32 +21,21 @@
     <main class="flex flex-grow">
         <div class="bg-neutral-50 shadow-md border-r-2 p-5 w-64">
             <h2>Toolbox</h2>
-            <div id="toolbox">
-                <div id="tab-tab-name">
-                    <h3>Tab Name</h3>
-                    <div class="block-wrapper">
-                        <div class="block">hello world</div>
-                        <button type="button" onclick="addBlock()"><i class="fa-solid fa-plus"></i></button>
-                    </div>
-                </div>
 
-                <div id="tab-events">
-                    <h3>Events</h3>
-                </div>
+            <div id="tab-qubits">
+                <h3>Qubits</h3>
+            </div>
 
-                <div id="tab-qubits">
-                    <h3>Qubits</h3>
-                </div>
-
-                <div id="tab-gates">
-                    <h3>Gates</h3>
-                </div>
+            <div id="tab-gates">
+                <h3>Gates</h3>
             </div>
         </div>
 
         <div class="p-5 flex-grow">
             <h2 class="w-full">Editor</h2>
-            <div id="editor" class="flex flex-col"></div>
+            <div id="editor" class="flex flex-col">
+                <div id="whenFlagClicked" class="block block-events">when flag clicked</div>
+            </div>
         </div>
     </main>
 </body>
