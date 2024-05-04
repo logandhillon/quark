@@ -191,6 +191,7 @@ function packBlockToJson(id) {
         args[`${i}`] = {
             value: element.value
         }
+        i++;
     });
 
     return {
