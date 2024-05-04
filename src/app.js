@@ -104,19 +104,19 @@ function addBlock(id) {
 
     const block = document.getElementById(id).cloneNode(true);
 
-    if (prevId != null) {
-        const prevBlock = document.getElementById(prevId);
-        const prevArgs = Array.from(prevBlock.querySelectorAll("input"));
-        const args = Array.from(block.querySelectorAll("input"));
+    // if (prevId != null) {
+    //     const prevBlock = document.getElementById(prevId);
+    //     const prevArgs = Array.from(prevBlock.querySelectorAll("input"));
+    //     const args = Array.from(block.querySelectorAll("input"));
 
-        prevArgs.forEach(prevArg => {
-            args.forEach(arg => {
-                if (prevArg.placeholder == arg.placeholder) {
-                    arg.value = prevArg.value;
-                }
-            });
-        });
-    }
+    //     prevArgs.forEach(prevArg => {
+    //         args.forEach(arg => {
+    //             if (prevArg.placeholder == arg.placeholder) {
+    //                 arg.value = prevArg.value;
+    //             }
+    //         });
+    //     });
+    // }
 
     wrapper.appendChild(block);
     wrapper.appendChild(btnAdd);
@@ -143,6 +143,8 @@ function execute() {
         script[`${i}`] = packBlockToJson(element.id);
         i++;
     });
+
+    console.log(script)
 
     status.innerText = "Executing...";
 
