@@ -87,6 +87,8 @@ function generateUUID() {
     });
 }
 
+let prevId = null;
+
 function addBlock(id) {
     const uuid = generateUUID();
     const wrapper = document.createElement("div");
@@ -100,10 +102,28 @@ function addBlock(id) {
     iconAdd.className = "fa-solid fa-minus";
     btnAdd.appendChild(iconAdd);
 
-    wrapper.appendChild(document.getElementById(id).cloneNode(true));
+    const block = document.getElementById(id).cloneNode(true);
+
+    if (prevId != null) {
+        const prevBlock = document.getElementById(prevId);
+        const prevArgs = Array.from(prevBlock.querySelectorAll("input"));
+        const args = Array.from(block.querySelectorAll("input"));
+
+        prevArgs.forEach(prevArg => {
+            args.forEach(arg => {
+                if (prevArg.placeholder == arg.placeholder) {
+                    arg.value = prevArg.value;
+                }
+            });
+        });
+    }
+
+    wrapper.appendChild(block);
     wrapper.appendChild(btnAdd);
 
     editor.appendChild(wrapper);
+
+    prevId = uuid;
 }
 
 function removeBlock(id) {
