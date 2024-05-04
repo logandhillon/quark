@@ -158,9 +158,10 @@ function execute() {
         .then(response => response.json())
         .then(data => {
             status.innerText = "Done!"
-            setTimeout(function () {
-                status.innerText = "";
-            }, 1000)
+
+            console.log(data);
+
+            status.innerText = "Output: " + data['output'];
 
             document.getElementById("btn-play-spin").classList.toggle("hide", true);
             document.getElementById("btn-play-icon").classList.toggle("hide", false);
