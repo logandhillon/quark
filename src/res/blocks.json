@@ -19,40 +19,40 @@
     },    
     {
         "id": "phase",
-        "name": "apply phase shift of angle {} to {}",
+        "name": "apply phase shift to {} with angle {}",
         "args": {
-            "0": "theta",
-            "1": "qubit"
+            "0": "qubit",
+            "1": "theta"
         },
         "group": "gates",
         "tooltip": "This block applies a phase shift of a specified angle to a qubit. The phase shift gate adjusts the phase of the quantum state of the qubit without changing its amplitude. This operation is crucial for controlling the interference of quantum states in algorithms such as quantum Fourier transform and other quantum computing applications."
     },    
     {
         "id": "rotX",
-        "name": "apply RX gate with angle {} to {}",
+        "name": "apply RX gate with to {} with angle {}",
         "args": {
-            "0": "theta",
-            "1": "qubit"
+            "0": "qubit",
+            "1": "theta"
         },
         "group": "gates",
         "tooltip": "This block applies the RX (rotation about the X-axis) gate to a specified qubit at a given angle. The RX gate rotates the state of the qubit around the X-axis of the Bloch sphere by the specified angle. This rotation is fundamental for altering the probability amplitudes of the qubit's state, enabling precise control over its quantum state for computation."
     },    
     {
         "id": "rotY",
-        "name": "apply RY gate with angle {} to {}",
+        "name": "apply RY gate with to {} with angle {}",
         "args": {
-            "0": "theta",
-            "1": "qubit"
+            "0": "qubit",
+            "1": "angle"
         },
         "group": "gates",
         "tooltip": "This block applies the RY (rotation about the Y-axis) gate to a specified qubit at a given angle. The RY gate rotates the qubit's state around the Y-axis of the Bloch sphere. This gate is essential for adjusting the state vector of the qubit, enabling transitions between basis states, and is commonly used in quantum operations that require coherent superpositions."
     },    
     {
         "id": "rotZ",
-        "name": "apply RZ gate with angle {} to {}",
+        "name": "apply RZ gate with to {} with angle {}",
         "args": {
-            "0": "theta",
-            "1": "qubit"
+            "0": "qubit",
+            "1": "theta"
         },
         "group": "gates",
         "tooltip": "This block applies the RZ (rotation about the Z-axis) gate to a specified qubit at a given angle. The RZ gate is used to change the phase of the qubit without altering its probability amplitudes. It rotates the qubit's state around the Z-axis of the Bloch sphere, which is pivotal for phase manipulation in quantum circuits and is often used in quantum algorithms to control qubit superpositions."
@@ -95,12 +95,12 @@
     },    
     {
         "id": "uGate",
-        "name": "apply U gate with angles {} {} {} to {}",
+        "name": "apply U gate to {} with angles {} {} {}",
         "args": {
-            "0": "theta",
-            "1": "phi",
-            "2": "lambda",
-            "3": "qubit"
+            "0": "qubit",
+            "1": "theta",
+            "2": "phi",
+            "3": "lambda"
         },
         "group": "gates",
         "tooltip": "This block applies the U gate to a specified qubit, using three angles: theta, phi, and lambda. The U gate is a general-purpose single-qubit gate that provides a parametric way to perform any unitary operation on a qubit. It encompasses all possible single-qubit transformations and is fundamental in custom quantum gate design, allowing for the execution of highly specific manipulations needed in complex quantum algorithms."
