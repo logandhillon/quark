@@ -1,3 +1,5 @@
+# Copyright (C) 2024 Brandon Namgoong. See LICENSE for more.
+
 import json
 import re
 from functools import wraps

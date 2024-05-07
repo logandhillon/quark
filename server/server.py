@@ -1,3 +1,5 @@
+# Copyright (C) 2024 Logan Dhillon. See LICENSE for more.
+
 from qupython import Qubit, quantum
 import json
 import subprocess

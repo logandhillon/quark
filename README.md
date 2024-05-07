@@ -16,7 +16,7 @@ The backend of Quark is built using IBM's quPython library, a library that packa
 
 ## Challenges we ran into
 
-The overarching challenge while creating Quark was understanding the foundationals of quantum computing and how a quantum particle, or qubit, is programmed. Another challenge was creating a webapp that was attempting to meet the standard of quality of Scratch's webapp. Creating a frontend with a usable, human-oriented UI that can seamlessly provide all the required data to the backend was definitely a challenge.
+The overarching challenge while creating Quark was understanding the foundations of quantum computing and how a quantum particle, or qubit, is programmed. Another challenge was creating a web-app that was attempting to meet the standard of quality of Scratch's web-app. Creating a frontend with a usable, human-oriented UI that can seamlessly provide all the required data to the backend was definitely a challenge.
 
 ## Accomplishments that we're proud of
 
@@ -32,4 +32,10 @@ There are many plans for Quark in the near future, including:
 - A visual output window representing qubit states
 - Simulation of quantum entanglement
 
-![Made for EurekaHACKS 2024](https://img.shields.io/badge/Made_for-EurekaHACKS_2024-blue)
+## Credits
+
+[![Made for EurekaHACKS 2024](https://img.shields.io/badge/Made_for-EurekaHACKS_2024-blue)](https://eurekahacks.ca/)
+
+Developed for [EurekaHACKS 2024](https://eurekahacks.ca) by [Logan Dhillon](https://logandhillon.github.io), Brandon Namgoong, and Kevin Dalli.
+
+Copyright (C) 2024 [Logan Dhillon](https://logandhillon.github.io) and Brandon Namgoong. See [LICENSE](LICENSE) for more.
