@@ -1,3 +1,5 @@
+// Copyright (C) 2024 Logan Dhillon. See LICENSE for more.
+
 window.addEventListener("DOMContentLoaded", function () {
     loadBlocks();
 
